@@ -1,21 +1,11 @@
 import { experiences } from "../data";
 
 const cardStyles = [
-  {
-    accent: "bg-rose-500",
-    label: "Mentoring",
-    focus: "Guiding students through code, debugging, and algorithmic thinking.",
-  },
-  {
-    accent: "bg-sky-500",
-    label: "Technical Lab",
-    focus: "Supporting hands-on network configuration and troubleshooting.",
-  },
-  {
-    accent: "bg-amber-500",
-    label: "Organization",
-    focus: "Handling budget records, accountability, and student activity needs.",
-  },
+  "bg-rose-500",
+  "bg-sky-500",
+  "bg-amber-500",
+  "bg-emerald-500",
+  "bg-violet-500",
 ];
 
 export function ExperienceSection() {
@@ -38,7 +28,7 @@ export function ExperienceSection() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {experiences.map((item, index) => {
-            const style = cardStyles[index % cardStyles.length];
+            const accent = cardStyles[index % cardStyles.length];
 
             return (
               <article
@@ -46,11 +36,11 @@ export function ExperienceSection() {
                 className="relative flex min-h-80 flex-col rounded-lg border border-slate-200 bg-[#fcfaf7] p-6 shadow-[0_16px_44px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_22px_54px_rgba(15,23,42,0.09)] sm:p-7"
               >
                 <div
-                  className={`absolute left-0 top-6 h-12 w-1 rounded-r ${style.accent}`}
+                  className={`absolute left-0 top-6 h-12 w-1 rounded-r ${accent}`}
                 />
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                    {style.label}
+                    {item.label}
                   </span>
                   <span className="text-sm font-medium text-slate-500">
                     {item.period}
@@ -64,7 +54,7 @@ export function ExperienceSection() {
                   {item.description}
                 </p>
                 <p className="mt-auto border-t border-slate-200 pt-5 text-sm leading-6 text-slate-500">
-                  {style.focus}
+                  {item.focus}
                 </p>
               </article>
             );

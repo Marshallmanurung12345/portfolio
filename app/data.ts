@@ -32,21 +32,48 @@ export const featuredProjects = [
 export const experiences = [
   {
     title: "Teaching Assistant - Data Structures and Algorithms",
-    period: "2026 - Present",
+    period: "Feb 2026 - Present",
+    label: "Teaching Assistant",
     description:
-      "Mentoring students in programming, debugging, and algorithmic problem solving through labs and technical guidance.",
+      "Assisted in teaching data structures and algorithms while mentoring students in programming, debugging, and structured problem solving.",
+    focus:
+      "Guided coding labs, debugging sessions, algorithm analysis, and problem-solving techniques.",
   },
   {
     title: "Teaching Assistant - Computer Networks",
-    period: "2025",
+    period: "Sep 2025 - Dec 2025",
+    label: "Technical Lab",
     description:
-      "Supporting laboratory sessions on router configuration, switching, IP addressing, and troubleshooting.",
+      "Assisted networking laboratory sessions and mentored students in router configuration, switching, IP addressing, and network fundamentals.",
+    focus:
+      "Supported troubleshooting during lab sessions and helped students understand practical networking workflows.",
   },
   {
-    title: "Treasurer - HIMASTI",
-    period: "2025 - Present",
+    title: "Treasurer - Informatics Student Association (HIMASTI)",
+    period: "Nov 2025 - Present",
+    label: "Organization",
     description:
-      "Managing budget allocation, financial records, and reporting for student organization activities.",
+      "Managed budgeting, financial records, and reporting for organizational activities in the Informatics Student Association.",
+    focus:
+      "Ensured accountability, financial clarity, and proper allocation of organizational funds.",
+  },
+  {
+    title: "Student Leadership",
+    period: "Aug 2024 - May 2025",
+    label: "Leadership",
+    description:
+      "Mentored first-year students in academic adaptation, personal development, discipline, responsibility, and campus life.",
+    focus:
+      "Provided guidance and support to help new students adjust to academic and social expectations.",
+  },
+  {
+    title: "Head of Event Division - HIMASTI Election Committee",
+    period: "Oct 2025 - Nov 2025",
+    label: "Event Lead",
+    description:
+      "Led event planning and execution by coordinating committees, managing event flow, and ensuring activities followed schedule.",
+    focus:
+      "Coordinated execution details and supported smooth committee collaboration throughout the event.",
   },
 ];
 
