@@ -42,9 +42,6 @@ export function ExperienceSection() {
                   <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                     {item.label}
                   </span>
-                  <span className="text-sm font-medium text-slate-500">
-                    {item.period}
-                  </span>
                 </div>
 
                 <h3 className="mt-5 text-2xl font-semibold leading-tight text-slate-950">
