@@ -45,6 +45,7 @@ export function ProjectShowcase() {
             const isLppmProject = index === 0;
             const isGpdiProject = index === 1;
             const isLaundryProject = index === 2;
+            const isMachineLearningProject = index === 3;
 
             return (
               <article
@@ -200,6 +201,38 @@ export function ProjectShowcase() {
                               className="aspect-[379/743] rounded-[1rem] bg-cover bg-top"
                               style={{
                                 backgroundImage: "url('/laundry-mobile-2.png')",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : isMachineLearningProject ? (
+                    <>
+                      <div className="absolute inset-0 bg-[linear-gradient(135deg,#111827_0%,#14532d_50%,#365314_100%)]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:44px_44px] opacity-16" />
+
+                      <div className="relative grid h-full items-center gap-6 md:grid-cols-[0.72fr_1fr]">
+                        <div className="text-white">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-lime-100">
+                            Machine Learning
+                          </p>
+                          <h4 className="mt-4 text-3xl font-semibold leading-tight">
+                            Rice Leaf Disease Classification
+                          </h4>
+                          <p className="mt-4 text-sm leading-7 text-white/74">
+                            Team-based computer vision project using
+                            preprocessing, augmentation, CNN model development,
+                            and evaluation.
+                          </p>
+                        </div>
+
+                        <div className="ml-auto w-full max-w-md">
+                          <div className="overflow-hidden rounded-lg border border-white/18 bg-white/14 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.38)] backdrop-blur-md">
+                            <div
+                              className="aspect-[1904/881] rounded-md bg-cover bg-left-top"
+                              style={{
+                                backgroundImage: "url('/rice-leaf-ml.png')",
                               }}
                             />
                           </div>

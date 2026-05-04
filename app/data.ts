@@ -20,6 +20,13 @@ export const featuredProjects = [
     tags: ["Android", "Admin Tools", "Operations"],
     period: "2026",
   },
+  {
+    title: "Rice Leaf Disease Classification",
+    summary:
+      "Academic machine learning project using CNN-based computer vision to classify rice leaf diseases from agricultural image datasets.",
+    tags: ["Computer Vision", "CNN", "Machine Learning"],
+    period: "Apr 2026 - Present",
+  },
 ];
 
 export const experiences = [
