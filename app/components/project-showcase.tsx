@@ -43,6 +43,8 @@ export function ProjectShowcase() {
             const visual = projectVisuals[index % projectVisuals.length];
             const reverse = index % 2 === 1;
             const isLppmProject = index === 0;
+            const isGpdiProject = index === 1;
+            const isLaundryProject = index === 2;
 
             return (
               <article
@@ -111,6 +113,93 @@ export function ProjectShowcase() {
                               className="aspect-[16/9] rounded-md bg-cover bg-center"
                               style={{
                                 backgroundImage: "url('/lppm-dashboard.png')",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : isGpdiProject ? (
+                    <>
+                      <div
+                        className="absolute inset-0 bg-cover bg-[center_72%]"
+                        style={{ backgroundImage: "url('/gpdi-team.png')" }}
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,24,39,0.92)_0%,rgba(30,41,59,0.7)_45%,rgba(30,64,175,0.45)_100%)]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:44px_44px] opacity-18" />
+                      <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-400/30 blur-3xl" />
+                      <div className="absolute -bottom-24 left-6 h-64 w-64 rounded-full bg-rose-300/18 blur-3xl" />
+
+                      <div className="relative grid h-full items-center gap-6 md:grid-cols-[0.72fr_1fr]">
+                        <div className="text-white">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                            Web Platform
+                          </p>
+                          <h4 className="mt-4 text-3xl font-semibold leading-tight">
+                            GPdI Sibulele Balige
+                          </h4>
+                          <p className="mt-4 text-sm leading-7 text-white/74">
+                            Church information platform with public pages,
+                            schedules, announcements, gallery, and admin access.
+                          </p>
+                        </div>
+
+                        <div className="relative ml-auto w-full max-w-md pb-10 pr-12 sm:pb-12 sm:pr-16">
+                          <div className="overflow-hidden rounded-lg border border-white/18 bg-white/14 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.38)] backdrop-blur-md">
+                            <div
+                              className="aspect-[16/9] rounded-md bg-cover bg-top"
+                              style={{
+                                backgroundImage: "url('/gpdi-website.png')",
+                              }}
+                            />
+                          </div>
+                          <div className="absolute bottom-0 right-0 w-[34%] min-w-24 overflow-hidden rounded-[1.2rem] border border-white/24 bg-slate-950 p-1.5 shadow-[0_22px_60px_rgba(15,23,42,0.48)]">
+                            <div className="absolute left-1/2 top-1.5 z-10 h-1.5 w-10 -translate-x-1/2 rounded-full bg-slate-950/85" />
+                            <div
+                              className="aspect-[729/978] rounded-[0.9rem] bg-cover bg-top"
+                              style={{
+                                backgroundImage: "url('/gpdi-mobile.png')",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : isLaundryProject ? (
+                    <>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(45,212,191,0.35),transparent_30%),radial-gradient(circle_at_88%_14%,rgba(244,114,182,0.28),transparent_28%),linear-gradient(135deg,#0f172a_0%,#164e63_48%,#0f766e_100%)]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20" />
+
+                      <div className="relative grid h-full items-center gap-6 md:grid-cols-[0.72fr_1fr]">
+                        <div className="text-white">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-teal-100">
+                            Mobile App
+                          </p>
+                          <h4 className="mt-4 text-3xl font-semibold leading-tight">
+                            Laundry Management
+                          </h4>
+                          <p className="mt-4 text-sm leading-7 text-white/74">
+                            Mobile workflow for managing laundry orders,
+                            transaction details, and operational progress.
+                          </p>
+                        </div>
+
+                        <div className="relative mx-auto flex min-h-72 w-full max-w-md items-center justify-center">
+                          <div className="relative z-10 w-[42%] min-w-28 rotate-[-4deg] overflow-hidden rounded-[1.45rem] border border-white/24 bg-slate-950 p-1.5 shadow-[0_26px_70px_rgba(15,23,42,0.44)]">
+                            <div className="absolute left-1/2 top-1.5 z-10 h-1.5 w-10 -translate-x-1/2 rounded-full bg-slate-950/85" />
+                            <div
+                              className="aspect-[371/820] rounded-[1rem] bg-cover bg-top"
+                              style={{
+                                backgroundImage: "url('/laundry-mobile-1.png')",
+                              }}
+                            />
+                          </div>
+                          <div className="relative -ml-6 mt-10 w-[42%] min-w-28 rotate-[5deg] overflow-hidden rounded-[1.45rem] border border-white/24 bg-slate-950 p-1.5 shadow-[0_26px_70px_rgba(15,23,42,0.44)] sm:-ml-10">
+                            <div className="absolute left-1/2 top-1.5 z-10 h-1.5 w-10 -translate-x-1/2 rounded-full bg-slate-950/85" />
+                            <div
+                              className="aspect-[379/743] rounded-[1rem] bg-cover bg-top"
+                              style={{
+                                backgroundImage: "url('/laundry-mobile-2.png')",
                               }}
                             />
                           </div>

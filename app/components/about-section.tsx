@@ -43,7 +43,7 @@ export function AboutSection() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {technicalSkills.slice(0, 8).map((skill) => (
+              {technicalSkills.map((skill) => (
                 <span
                   key={skill}
                   className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"

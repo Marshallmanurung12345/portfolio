@@ -69,14 +69,21 @@ export const aboutHighlights = [
 ];
 
 export const technicalSkills = [
+  "HTML",
+  "CSS",
   "JavaScript",
   "TypeScript",
   "React",
+  "Next.js",
+  "Tailwind CSS",
   "Node.js",
   "Laravel",
   "PHP",
   "Java",
   "Kotlin",
+  "Flutter",
+  "Dart",
+  "Firebase",
   "MySQL",
   "PostgreSQL",
   "REST API",
