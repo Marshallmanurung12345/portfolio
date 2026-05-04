@@ -1,31 +1,9 @@
 import Link from "next/link";
-import { SectionTitle } from "./components/section-title";
-import {
-  aboutHighlights,
-  contactLinks,
-  experiences,
-  featuredProjects,
-  technicalSkills,
-} from "./data";
+import { AboutSection } from "./components/about-section";
+import { ContactSection } from "./components/contact-section";
+import { ExperienceSection } from "./components/experience-section";
+import { ProjectShowcase } from "./components/project-showcase";
 export default function Home() {
-  const experienceCardStyles = [
-    "bg-[linear-gradient(180deg,#3b3340_0%,#4b414f_100%)]",
-    "bg-[linear-gradient(180deg,#27384a_0%,#31485e_100%)]",
-    "bg-[linear-gradient(180deg,#4b3b31_0%,#5a473b_100%)]",
-  ];
-
-  const experienceAccentStyles = [
-    "from-rose-400 via-pink-300 to-orange-200",
-    "from-sky-400 via-cyan-300 to-indigo-200",
-    "from-amber-300 via-orange-300 to-yellow-100",
-  ];
-
-  const experienceBadgeStyles = [
-    "bg-rose-100 text-rose-700",
-    "bg-sky-100 text-sky-700",
-    "bg-amber-100 text-amber-700",
-  ];
-
   return (
     <main>
       <section
@@ -80,176 +58,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="border-b border-slate-200 bg-[#fcfaf7]">
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-          <SectionTitle
-            eyebrow="Experience"
-            title="Roles that shaped how I work."
-            description="Teaching, technical support, and organizational responsibility all matter here because they show how you operate beyond writing code."
-          />
+      <ExperienceSection />
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {experiences.map((item, index) => (
-              <article
-                key={item.title}
-                className={`group relative overflow-hidden rounded-[2rem] border border-white/8 p-8 shadow-[0_18px_55px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_28px_75px_rgba(15,23,42,0.12)] ${experienceCardStyles[index % experienceCardStyles.length]}`}
-              >
-                <div
-                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${experienceAccentStyles[index % experienceAccentStyles.length]}`}
-                />
-                <div className="absolute -bottom-14 right-8 h-40 w-40 rounded-full border border-white/8 bg-white/6 blur-2xl" />
-                <div
-                  className={`absolute left-8 top-8 flex h-14 w-14 items-center justify-center rounded-2xl text-sm font-semibold ${experienceBadgeStyles[index % experienceBadgeStyles.length]}`}
-                >
-                  0{index + 1}
-                </div>
+      <ProjectShowcase />
 
-                <div className="relative pt-20">
-                  <h3 className="max-w-sm text-2xl font-semibold leading-tight text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-5 text-base leading-8 text-slate-200">
-                    {item.description}
-                  </p>
+      <AboutSection />
 
-                  <div className="mt-8 flex items-center gap-3 text-sm text-white/70">
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-                    <span>Built through teaching, mentoring, and campus work.</span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="project" className="border-b border-slate-200 bg-white">
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-          <SectionTitle
-            eyebrow="Project"
-            title="Selected work, kept in one flow."
-            description="This keeps the portfolio easy to scan. Later, each project can still grow into a deeper case study when you have screenshots and more detail."
-          />
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {featuredProjects.map((project) => (
-              <article
-                key={project.title}
-                className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#fffaf8_100%)] p-8 shadow-[0_16px_50px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.07)]"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-slate-900 via-slate-700 to-slate-400" />
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-rose-500">
-                      {project.period}
-                    </p>
-                    <h3 className="mt-4 text-2xl font-semibold text-slate-950">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <div className="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium uppercase tracking-[0.15em] text-slate-500">
-                    Featured
-                  </div>
-                </div>
-                <p className="mt-5 text-base leading-8 text-slate-600">
-                  {project.summary}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium uppercase tracking-[0.15em] text-slate-600"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="border-b border-slate-200 bg-[#f6f1ea]">
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-          <SectionTitle
-            eyebrow="About"
-            title="A personal summary that stays concise."
-            description="This section gives enough context about who you are and how you work without turning the portfolio into a long resume block."
-          />
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_0.95fr]">
-            <div className="rounded-2xl border border-slate-200 bg-white p-8">
-              <h3 className="text-2xl font-semibold text-slate-950">Profile</h3>
-              <p className="mt-5 text-base leading-8 text-slate-600">
-                I am an Informatics student at Del Institute of Technology with
-                a strong interest in software development, especially web and
-                mobile applications that are practical, maintainable, and useful
-                in real workflows.
-              </p>
-              <p className="mt-5 text-base leading-8 text-slate-600">
-                I work across analysis, implementation, and iteration, and I
-                want this portfolio to keep growing with stronger project case
-                studies over time.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-8">
-              <h3 className="text-2xl font-semibold text-slate-950">
-                Highlights
-              </h3>
-              <ul className="mt-6 space-y-4">
-                {aboutHighlights.map((item) => (
-                  <li
-                    key={item}
-                    className="border-l-2 border-rose-200 pl-4 text-sm leading-7 text-slate-600"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {technicalSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-md border border-slate-200 bg-[#fcfaf7] px-4 py-3 text-sm font-medium text-slate-700"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="bg-white">
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-          <SectionTitle
-            eyebrow="Contact"
-            title="Everything stays reachable from one page."
-            description="This keeps the portfolio easy to use. People can read, scroll, and contact you without jumping between separate pages."
-          />
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {contactLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="rounded-2xl border border-slate-200 bg-[#fcfaf7] p-8 transition hover:border-slate-300 hover:bg-white"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
-                  {item.label}
-                </p>
-                <p className="mt-4 break-all text-xl font-semibold text-slate-950">
-                  {item.value}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </main>
   );
 }
