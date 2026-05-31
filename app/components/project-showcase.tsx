@@ -46,6 +46,7 @@ export function ProjectShowcase() {
             const isGpdiProject = index === 1;
             const isLaundryProject = index === 2;
             const isMachineLearningProject = index === 3;
+            const isNusaMartProject = index === 4;
 
             return (
               <article
@@ -227,12 +228,71 @@ export function ProjectShowcase() {
                           </p>
                         </div>
 
-                        <div className="ml-auto w-full max-w-md">
+                        <div className="relative ml-auto w-full max-w-md pb-16 pr-8 sm:pb-20 sm:pr-12">
                           <div className="overflow-hidden rounded-lg border border-white/18 bg-white/14 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.38)] backdrop-blur-md">
                             <div
                               className="aspect-[1904/881] rounded-md bg-cover bg-left-top"
                               style={{
-                                backgroundImage: "url('/rice-leaf-ml.png')",
+                                backgroundImage: "url('/riceguard-home.png')",
+                              }}
+                            />
+                          </div>
+                          <div className="absolute bottom-0 right-0 w-[58%] min-w-44 overflow-hidden rounded-lg border border-white/22 bg-white/16 p-1.5 shadow-[0_24px_70px_rgba(15,23,42,0.42)] backdrop-blur-md">
+                            <div
+                              className="aspect-[1904/881] rounded-md bg-cover bg-center"
+                              style={{
+                                backgroundImage:
+                                  "url('/riceguard-features.png')",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : isNusaMartProject ? (
+                    <>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(249,115,22,0.28),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(251,146,60,0.22),transparent_30%),linear-gradient(135deg,#111827_0%,#251b2e_46%,#431407_100%)]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:44px_44px] opacity-16" />
+                      <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-orange-500/25 blur-3xl" />
+                      <div className="absolute -bottom-20 left-8 h-64 w-64 rounded-full bg-rose-300/14 blur-3xl" />
+
+                      <div className="relative grid h-full items-center gap-6 md:grid-cols-[0.72fr_1fr]">
+                        <div className="text-white">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-100">
+                            E-Commerce
+                          </p>
+                          <h4 className="mt-4 text-3xl font-semibold leading-tight">
+                            NusaMart UMKM Marketplace
+                          </h4>
+                          <p className="mt-4 text-sm leading-7 text-white/74">
+                            Marketplace flow for browsing local products,
+                            account access, cart checkout, shipping options,
+                            and payment method selection.
+                          </p>
+                        </div>
+
+                        <div className="relative ml-auto min-h-80 w-full max-w-md">
+                          <div className="overflow-hidden rounded-lg border border-white/18 bg-white/14 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.42)] backdrop-blur-md">
+                            <div
+                              className="aspect-[1905/1004] rounded-md bg-cover bg-left-top"
+                              style={{
+                                backgroundImage: "url('/nusamart-home.png')",
+                              }}
+                            />
+                          </div>
+                          <div className="absolute -bottom-3 left-0 w-[50%] min-w-40 overflow-hidden rounded-lg border border-white/22 bg-white/16 p-1.5 shadow-[0_22px_64px_rgba(15,23,42,0.44)] backdrop-blur-md">
+                            <div
+                              className="aspect-[1905/1001] rounded-md bg-cover bg-center"
+                              style={{
+                                backgroundImage: "url('/nusamart-login.png')",
+                              }}
+                            />
+                          </div>
+                          <div className="absolute -bottom-8 right-0 w-[58%] min-w-44 overflow-hidden rounded-lg border border-white/22 bg-white/16 p-1.5 shadow-[0_22px_64px_rgba(15,23,42,0.44)] backdrop-blur-md">
+                            <div
+                              className="aspect-[1904/1002] rounded-md bg-cover bg-center"
+                              style={{
+                                backgroundImage: "url('/nusamart-cart.png')",
                               }}
                             />
                           </div>

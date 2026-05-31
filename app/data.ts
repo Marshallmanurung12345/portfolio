@@ -27,6 +27,13 @@ export const featuredProjects = [
     tags: ["Computer Vision", "CNN", "Machine Learning"],
     period: "Apr 2026 - Present",
   },
+  {
+    title: "NusaMart UMKM Marketplace",
+    summary:
+      "Marketplace prototype for Indonesian UMKM products with product discovery, authentication, cart, shipping, and payment flow.",
+    tags: ["Marketplace", "E-Commerce", "Web App"],
+    period: "2026",
+  },
 ];
 
 export const experiences = [
