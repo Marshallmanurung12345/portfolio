@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AboutSection } from "./components/about-section";
 import { ContactSection } from "./components/contact-section";
@@ -47,12 +48,22 @@ export default function Home() {
           </div>
 
           <div className="hidden lg:flex lg:justify-end">
-            <div className="relative h-[34rem] w-full max-w-[30rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04))] shadow-[0_30px_120px_rgba(2,6,23,0.42)] backdrop-blur-sm">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/marshall-home.png')" }}
-              />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_transparent_38%),linear-gradient(180deg,rgba(15,23,42,0.02),rgba(15,23,42,0.16)_56%,rgba(15,23,42,0.28))]" />
+            <div className="relative w-full max-w-[31rem]">
+              <div className="absolute -left-8 top-10 h-40 w-40 rounded-full bg-rose-500/25 blur-3xl" />
+              <div className="absolute -right-7 bottom-8 h-48 w-48 rounded-full bg-emerald-300/14 blur-3xl" />
+              <div className="absolute -inset-3 rounded-[2.25rem] border border-white/10" />
+              <div className="relative h-[34rem] overflow-hidden rounded-[2rem] border border-white/10 bg-rose-950/30 shadow-[0_30px_120px_rgba(2,6,23,0.42)] backdrop-blur-sm">
+                <Image
+                  src="/marshall-hero-formal.png"
+                  alt="Marshall Manurung portrait"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 31rem, 0px"
+                  className="object-cover object-[50%_18%] scale-125"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.02),rgba(15,23,42,0.08)_45%,rgba(15,23,42,0.3)),radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_28%)]" />
+                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-950/58 to-transparent" />
+              </div>
             </div>
           </div>
         </div>
