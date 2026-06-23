@@ -58,10 +58,7 @@ export function ProjectShowcase() {
                     reverse ? "lg:order-2" : ""
                   }`}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-rose-500">
-                    {project.period}
-                  </p>
-                  <h3 className="mt-5 max-w-xl text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+                  <h3 className="max-w-xl text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
                     {project.title}
                   </h3>
                   <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
