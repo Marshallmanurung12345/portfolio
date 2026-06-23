@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#fcfaf7] text-slate-900 antialiased`}>
+      <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
         <SiteHeader />
         {children}
         <SiteFooter />

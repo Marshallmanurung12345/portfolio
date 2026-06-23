@@ -9,60 +9,65 @@ export default function Home() {
     <main>
       <section
         id="home"
-        className="relative min-h-screen overflow-hidden bg-slate-950"
+        className="relative min-h-[calc(100vh-73px)] overflow-hidden bg-white flex items-center"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(244,63,94,0.14),_transparent_24%),radial-gradient(circle_at_82%_20%,_rgba(34,197,94,0.14),_transparent_24%),linear-gradient(135deg,#0f172a_0%,#172033_45%,#1e293b_100%)]" />
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.04)_0,rgba(255,255,255,0.04)_1px,transparent_1px,transparent_24%)] opacity-30" />
-        <div className="absolute inset-y-0 left-[18%] w-[14%] bg-white/5 blur-[2px]" />
-        <div className="absolute inset-y-0 left-[46%] w-[18%] bg-slate-900/18" />
-        <div className="absolute bottom-[-14%] right-[6%] h-[24rem] w-[24rem] rounded-full border border-white/10 bg-emerald-200/8 blur-3xl" />
-        <div className="absolute right-[10%] top-[18%] hidden h-[26rem] w-[26rem] rounded-full border border-white/12 lg:block" />
-        <div className="absolute right-[13%] top-[21%] hidden h-[20rem] w-[20rem] rounded-full border border-emerald-300/14 lg:block" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.8)_0%,rgba(15,23,42,0.58)_42%,rgba(15,23,42,0.3)_100%)]" />
-
-        <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-14 px-6 pb-16 pt-32 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:px-12">
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.28em] text-white/70">
-              Hello
-            </p>
-            <h1 className="mt-4 text-5xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              My Name Is
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 py-12 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-12">
+          
+          {/* Left Column - Hero Content */}
+          <div className="max-w-3xl flex flex-col justify-center">
+            <span className="text-xl font-normal text-slate-500">Hello, I&apos;m</span>
+            <h1 className="mt-2 text-6xl font-extrabold tracking-tight text-slate-950 sm:text-7xl md:text-8xl leading-[1.05]">
+              Marshall
               <br />
-              <span className="text-rose-500">Marshall Manurung</span>
+              Manurung
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-              Informatics Student, Web Developer, and Mobile App Builder.
+            <p className="mt-6 text-lg font-semibold text-blue-600 md:text-xl">
+              Web Developer &amp; Informatics Student
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/cv-marshall-manurung.pdf"
-                className="rounded-md bg-rose-500 px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_18px_60px_rgba(244,63,94,0.28)] transition hover:bg-rose-400"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-blue-500"
               >
-                View My CV
+                <svg className="h-4.5 w-4.5 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
               </Link>
-              <span className="flex items-center text-sm text-slate-400">
-                Open resume and supporting profile summary
-              </span>
+              <Link
+                href="/#project"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition duration-200 hover:bg-slate-50 hover:text-slate-900"
+              >
+                View Projects
+                <svg className="h-4.5 w-4.5 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
             </div>
           </div>
 
-          <div className="hidden lg:flex lg:justify-end">
-            <div className="relative w-full max-w-[31rem]">
-              <div className="absolute -left-8 top-10 h-40 w-40 rounded-full bg-rose-500/25 blur-3xl" />
-              <div className="absolute -right-7 bottom-8 h-48 w-48 rounded-full bg-emerald-300/14 blur-3xl" />
-              <div className="absolute -inset-3 rounded-[2.25rem] border border-white/10" />
-              <div className="relative h-[34rem] overflow-hidden rounded-[2rem] border border-white/10 bg-rose-950/30 shadow-[0_30px_120px_rgba(2,6,23,0.42)] backdrop-blur-sm">
+          {/* Right Column - Portrait Image */}
+          <div className="relative flex items-center justify-center lg:justify-end">
+            <div className="relative w-full max-w-[28rem] aspect-[4/5] flex items-center justify-center">
+              {/* Subtle background circle shape */}
+              <div className="absolute w-[24rem] h-[24rem] sm:w-[28rem] sm:h-[28rem] rounded-full bg-slate-100/40 -z-10" />
+              
+              {/* Color portrait with bottom fade */}
+              <div className="relative w-full h-full overflow-hidden flex items-end">
                 <Image
-                  src="/marshall-hero-formal.png"
+                  src="/marshall-hero-nobg.png"
                   alt="Marshall Manurung portrait"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 31rem, 0px"
-                  className="object-cover object-[50%_18%] scale-125"
+                  sizes="(min-width: 1024px) 28rem, 100vw"
+                  className="object-contain object-bottom"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.02),rgba(15,23,42,0.08)_45%,rgba(15,23,42,0.3)),radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_28%)]" />
-                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-950/58 to-transparent" />
+                {/* Bottom gradient fade-out to white background */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent" />
               </div>
             </div>
           </div>
