@@ -1,21 +1,58 @@
 "use client";
 
-"use client";
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { contactLinks } from "../data";
 
 const navItems = [
-  { href: "/#home", label: "Home" },
-  { href: "/#about", label: "About" },
-  { href: "/#project", label: "Projects" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#home", id: "home", label: "Home" },
+  { href: "/#about", id: "about", label: "About" },
+  { href: "/#project", id: "project", label: "Projects" },
+  { href: "/#experience", id: "experience", label: "Experience" },
+  { href: "/#contact", id: "contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const handleScroll = () => {
+      const sections = ["home", "about", "project", "experience", "contact"];
+      
+      // If user has scrolled to the bottom of the page, highlight the last section (Contact)
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        setActiveSection("contact");
+        return;
+      }
+
+      // Check which section is currently active
+      const scrollPosition = window.scrollY + 160; // Offset for header trigger area
+      
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to set initial state
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   const githubLink = contactLinks.find((link) => link.label === "GitHub")?.href || "https://github.com";
   const linkedinLink = contactLinks.find((link) => link.label === "LinkedIn")?.href || "https://linkedin.com";
@@ -33,11 +70,9 @@ export function SiteHeader() {
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-medium text-slate-500 md:absolute md:left-1/2 md:-translate-x-1/2">
           {navItems.map((item) => {
             const isActive =
-              (pathname === "/" && item.href === "/#home") ||
-              (pathname === "/about" && item.href === "/#about") ||
-              ((pathname === "/project" || pathname === "/projects") && item.href === "/#project") ||
-              (pathname === "/experience" && item.href === "/#experience") ||
-              (pathname === "/contact" && item.href === "/#contact");
+              pathname === "/"
+                ? activeSection === item.id
+                : pathname === item.href.replace("/#", "/");
             return (
               <Link
                 key={item.href}

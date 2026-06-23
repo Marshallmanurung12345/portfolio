@@ -74,11 +74,11 @@ export default function Home() {
         </div>
       </section>
 
-      <ExperienceSection />
+      <AboutSection />
 
       <ProjectShowcase />
 
-      <AboutSection />
+      <ExperienceSection />
 
       <ContactSection />
     </main>
