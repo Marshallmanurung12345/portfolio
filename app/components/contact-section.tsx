@@ -1,127 +1,117 @@
-import Link from "next/link";
 import { contactLinks } from "../data";
 
-const contactMeta = {
+const contactCardConfig = {
   Email: {
-    eyebrow: "Best for project briefs",
-    action: "Send email",
-    note: "I usually keep project details, scope, and documents here.",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+    ),
+    bg: "bg-blue-50 text-blue-600 border-blue-100",
+    note: "Best for project briefs & inquiries.",
   },
   Phone: {
-    eyebrow: "Quick confirmation",
-    action: "Call number",
-    note: "Useful when the discussion needs a faster answer.",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+    ),
+    bg: "bg-emerald-50 text-emerald-600 border-emerald-100",
+    note: "Quick confirmations & follow-ups.",
   },
   LinkedIn: {
-    eyebrow: "Professional context",
-    action: "Open profile",
-    note: "Connect for work history, campus activity, and collaboration.",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    ),
+    bg: "bg-indigo-50 text-indigo-600 border-indigo-100",
+    note: "Professional networking & context.",
   },
   GitHub: {
-    eyebrow: "Code reference",
-    action: "Open GitHub",
-    note: "See repositories, experiments, and implementation practice.",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+      </svg>
+    ),
+    bg: "bg-slate-50 text-slate-700 border-slate-200",
+    note: "Code repositories & experiments.",
   },
 };
 
 export function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden border-b border-slate-200 bg-[#fcfaf7]"
-    >
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-rose-200/55 blur-3xl" />
-      <div className="absolute bottom-[-8rem] right-[-5rem] h-96 w-96 rounded-full bg-emerald-200/55 blur-3xl" />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_46%,rgba(15,23,42,0.04)_46%,rgba(15,23,42,0.04)_47%,transparent_47%)]" />
-
-      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
-        <div className="relative overflow-hidden rounded-[1.7rem] bg-slate-950 p-8 text-white shadow-[0_28px_90px_rgba(15,23,42,0.24)] sm:p-10">
-          <div className="absolute right-[-5rem] top-[-5rem] h-56 w-56 rounded-full border border-white/10" />
-          <div className="absolute bottom-[-4rem] left-[-4rem] h-44 w-44 rounded-full bg-rose-500/18 blur-2xl" />
-          <div className="relative">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-rose-300">
+    <section id="contact" className="border-b border-slate-200 bg-white">
+      <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          
+          {/* Left Column - Headline & Main CTA */}
+          <div className="space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-rose-500">
               Contact
             </p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Let&apos;s make the next conversation concrete.
+            <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+              Let&apos;s build something together.
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-300">
-              Send the context first: project goal, timeline, role needed, or
-              the problem you want to solve. I can respond with a clearer next
-              step when the brief is specific.
+            <p className="max-w-md text-base leading-8 text-slate-600">
+              If you have a project idea, a collaboration proposal, or simply want to connect, feel free to reach out through any of these direct channels.
             </p>
-
-            <div className="mt-10 grid gap-4 border-y border-white/10 py-6 sm:grid-cols-2">
-              <div>
-                <p className="text-3xl font-semibold text-white">4</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">
-                  direct channels for work, collaboration, and code references.
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl font-semibold text-white">Open</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">
-                  for focused project discussions and practical development
-                  work.
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href="mailto:marshallmanurung92@gmail.com"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-[0_18px_50px_rgba(244,63,94,0.28)] transition hover:bg-rose-400"
-            >
-              Start with email
-              <span aria-hidden="true">-&gt;</span>
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid content-center gap-4">
-          {contactLinks.map((item, index) => {
-            const meta = contactMeta[item.label as keyof typeof contactMeta];
-            const isExternal = item.href.startsWith("https://");
-
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noreferrer" : undefined}
-                className="group relative overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white/82 p-5 shadow-[0_18px_58px_rgba(15,23,42,0.07)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-[0_24px_72px_rgba(15,23,42,0.11)] sm:p-6"
+            
+            <div className="pt-4">
+              <a
+                href="mailto:marshallmanurung92@gmail.com"
+                className="inline-flex items-center gap-2.5 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-blue-500"
               >
-                <div className="absolute inset-y-0 left-0 w-1 bg-rose-500 transition group-hover:bg-slate-950" />
-                <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-[#fcfaf7] text-sm font-semibold text-slate-500">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                <svg className="h-4.5 w-4.5 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Start with email
+              </a>
+            </div>
+          </div>
 
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-rose-500">
-                          {item.label}
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-slate-500">
-                          {meta.eyebrow}
-                        </p>
-                      </div>
-                      <span className="rounded-full border border-slate-200 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-500 transition group-hover:border-slate-950 group-hover:text-slate-950">
-                        {meta.action}
-                      </span>
+          {/* Right Column - Sleek Channels Grid */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {contactLinks.map((item) => {
+              const config = contactCardConfig[item.label as keyof typeof contactCardConfig];
+              const isExternal = item.href.startsWith("https://");
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noreferrer" : undefined}
+                  className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_30px_rgba(15,23,42,0.02)] transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_12px_40px_rgba(15,23,42,0.05)] min-h-[160px]"
+                >
+                  {/* Top Bar: Icon & Title */}
+                  <div className="flex items-center gap-3">
+                    <div className={`flex h-9 w-9 items-center justify-center rounded-lg border ${config.bg}`}>
+                      {config.icon}
                     </div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                      {item.label}
+                    </span>
+                  </div>
 
-                    <p className="mt-5 break-all text-2xl font-semibold leading-tight tracking-tight text-slate-950">
+                  {/* Bottom Info: Value & Note */}
+                  <div className="mt-6">
+                    <p className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors break-all leading-tight">
                       {item.value}
                     </p>
-                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
-                      {meta.note}
+                    <p className="mt-1.5 text-xs text-slate-500 leading-normal">
+                      {config.note}
                     </p>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+                </a>
+              );
+            })}
+          </div>
+
         </div>
       </div>
     </section>
