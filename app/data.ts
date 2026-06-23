@@ -116,6 +116,7 @@ export const technicalSkills = [
   "TypeScript",
   "React",
   "Next.js",
+  "Vue",
   "Tailwind CSS",
   "Node.js",
   "Laravel",
