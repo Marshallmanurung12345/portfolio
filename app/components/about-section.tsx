@@ -38,8 +38,8 @@ export function AboutSection() {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2.5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition duration-300 hover:scale-[1.01] hover:shadow-[0_16px_50px_rgba(15,23,42,0.09)]">
               <div
                 className="aspect-[4/5] rounded-xl bg-cover bg-center bg-[#fcfaf7]"
-                style={{ backgroundImage: "url('/workspace-about.png')" }}
-                aria-label="Workspace Illustration"
+                style={{ backgroundImage: "url('/marshall-profile.jpg')" }}
+                aria-label="Marshall Manurung Portrait"
               />
             </div>
           </div>
